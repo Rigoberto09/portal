@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third is-offset-one-third">
+                <h1 class="is-size-1">Bienvenido</h1>
+                <form action="{{url_for('hacer_login')}}" method="post">
+                    <label for="correo">Correo</label>
+                    <div class="control">
+                        <input autofocus required type="email" class="input" placeholder="Correo" id="correo"
+                            name="correo">
+                    </div>
+                    <div class="control">
+                        <label for="palabra_secreta">Contraseña</label>
+                        <input required type="password" class="input" placeholder="Contraseña" id="palabra_secreta"
+                            name="palabra_secreta">
+                    </div>
+
+                    <button class="button is-success mt-2">Entrar</button>
+                    <a href="#" type="button" class="btn btn-success" style="width:90px; margin: 1px;">Editar</a>
+                    {# Mostrar mensajes / errores si es que existen #}
+                    {% with mensajes_flash = get_flashed_messages() %}
+                    {% if mensajes_flash %}
+                    <div class="notification is-danger mt-2">
+                        {% for mensaje in mensajes_flash %}
+                        <li>{{ mensaje }}</li>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

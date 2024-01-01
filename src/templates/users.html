@@ -1,0 +1,162 @@
+{% extends "layout.html"%}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+<br />
+{% for message in messages %}
+<div class="alert alert-primary alert-dismissible" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endwith %}
+<!--filtros de busqueda-->
+<div style="overflow-x: auto" id="clientes">
+  <table class="table-hover tabla">
+    <thead>
+      <tr>
+        <td>
+          Filtrar mediante
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td><input type="text" placeholder="Usuario"></td>
+       <td><input type="text" placeholder="Contraseña"></td>
+      </tr>
+      <tr>
+        <td>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Launch demo modal
+          </button> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--nodal-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="text-align: justify;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Resultado de usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Resultado
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- datos del usuario-->
+<div style="overflow-x: auto" id="clientes">
+
+   <div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter2">Mis Datos</button>
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter3">Agregar Usuario</button>
+  </div>
+
+   <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="text-align: justify;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar Datos personales</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--formulario para editar datos personales-->
+          <form style="text-align: justify;">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre Completo</label>
+              <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp" placeholder="Nombre Completo" value="{{editUser.3}}">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más..</small>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo Electronico</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email" value="{{editUser.1}}">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más..</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary">Cambiar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--agregrar usuario-->
+
+  <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="text-align: justify;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">El acceso al sistema es controlado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--formulario para editar datos personales-->
+          <form action="agregarN" method="post" style="text-align: justify;">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo Electronico</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email" name="username">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más..</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- datos de todos los usuarios-->
+<div style="overflow-x: auto" id="clientes">
+  <table class="table-hover tabla">
+    <thead>
+      <tr>
+        <th>Correo Electronico</th>
+        <th>Nombre completo</th>
+        <th>Accion</th>
+        <!--<th scope="col">Total urbana</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in user %}
+      <tr>
+       <td>{{user.1}}</td>
+       <td>{{user.3}}</td>
+       <td>
+        <a href="/eliminar_usuarios/{{ user.0}}" type="button" class="btn btn-danger" style="width: auto ;">Eliminar</a>
+      </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

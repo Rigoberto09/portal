@@ -1,0 +1,405 @@
+{% extends "layout.html"%}
+{% block content %}
+<!--filtros de busqueda-->
+<div style="overflow-x: auto" id="clientes">
+  <table class="table-hover tabla">
+    <thead>
+      <tr>
+        <td>
+          Filtrar mediante
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td><input type="text" placeholder="Nombre"></td>
+       <td><input type="text" placeholder="Encargado"></td>
+       <td><input type="text" placeholder="Año"></td>
+       <td>
+        <select>
+          <option value="*"> Municipios</option>
+          <option value="1"> La Ceiba</option>
+          <option value="2">Tela </option>
+          <option value="3"> Jutiapa </option>
+          <option value="4"> La Masica </option>
+          <option value="5"> San Francisco </option>
+          <option value="6"> Arizona </option>
+          <option value="7"> Esparta </option>
+          <option value="8"> El Porvenir</option>
+          <option value="9">Trujillo</option>
+          <option value="10">Balfate</option>
+          <option value="11">Iriona</option>
+          <option value="12">Lim—n</option>
+          <option value="13">Sab‡</option>
+          <option value="14">Santa Fe</option>
+          <option value="15">Santa Rosa de Agu‡n</option>
+          <option value="16">Sonaguera</option>
+          <option value="17">Tocoa</option>
+          <option value="18">Bonito Oriental</option>
+          <option value="19">Comayagua</option>
+          <option value="20"> Ajuterique</option>
+          <option value="21">El Rosario</option>
+          <option value="22">Esqu’as</option>
+          <option value="23">Humuya</option>
+          <option value="24">La libertad</option>
+          <option value="25">Laman’</option>
+          <option value="26">La Trinidad</option>
+          <option value="27">Lejamani</option>
+          <option value="28">Meambar</option>
+          <option value="29">Minas de Oro</option>
+          <option value="30">Ojos de Agua</option>
+          <option value="31">San Jer—nimo Honduras</option>
+          <option value="32">San JosŽ de Comayagua</option>
+          <option value="33">San JosŽ del Potrero</option>
+          <option value="34">San Luis</option>
+          <option value="35">San Sebasti‡n</option>
+          <option value="36">Siguatepeque</option>
+          <option value="37">Villa de San Antonio</option>
+          <option value="38">Las Lajas</option>
+          <option value="39">TaulabŽ</option>
+          <option value="40">Santa Rosa de Cop‡n</option>
+          <option value="41">Cabañas</option>
+          <option value="42">Concepci—n</option>
+          <option value="43">Cop‡n Ruinas</option>
+          <option value="44">Corqu’n</option>
+          <option value="45">Cucuyagua</option>
+          <option value="46">Dolores</option>
+          <option value="47">Dulce Nombre</option>
+          <option value="48">El Para’so</option>
+          <option value="49">Florida</option>
+          <option value="50">La Jigua</option>
+          <option value="51">La Uni—n</option>
+          <option value="52">Nueva Arcadia</option>
+          <option value="53">San Agust’n</option>
+          <option value="54">San Antonio</option>
+          <option value="55">San Jer—nimo</option>
+          <option value="56">San JosŽ</option>
+          <option value="57">San Juan de Opoa</option>
+          <option value="58">San Nicol‡s</option>
+          <option value="59">San Pedro</option>
+          <option value="60">Santa Rita</option>
+          <option value="61">Trinidad de Cop‡n</option>
+          <option value="62">Veracruz</option>
+          <option value="63">San Pedro Sula</option>
+          <option value="64">Choloma</option>
+          <option value="65">Omoa</option>
+          <option value="66">Pimienta</option>
+          <option value="67">Potrerillos</option>
+          <option value="68">Puerto CortŽs</option>
+          <option value="69">San Antonio de CortŽs</option>
+          <option value="70">San Francisco de Yojoa</option>
+          <option value="71">San Manuel</option>
+          <option value="72">Santa Cruz de Yojoa</option>
+          <option value="73">Villanueva</option>
+          <option value="74">La Lima</option>
+          <option value="75">Choluteca</option>
+          <option value="76"> Apacilagua</option>
+          <option value="77">Concepci—n de Mar’a</option>
+          <option value="78">Duyure</option>
+          <option value="79">El Corpus</option>
+          <option value="80">El Triunfo</option>
+          <option value="81">Marcovia</option>
+          <option value="82">Morolica</option>
+          <option value="83">Namasigue</option>
+          <option value="84">Orocuina</option>
+          <option value="85">Pespire</option>
+          <option value="86">San Antonio de Flores</option>
+          <option value="87">San Isidro</option>
+          <option value="88">San JosŽ</option>
+          <option value="89">San Marcos de Col—n</option>
+          <option value="90">Santa Ana de Yusguare</option>
+          <option value="91">Yuscar‡n</option>
+          <option value="92">Alauca</option>
+          <option value="93">Danl’</option>
+          <option value="94">El Para’so</option>
+          <option value="95"> GŸinope</option>
+          <option value="96">Jacaleapa</option>
+          <option value="97">Liure</option>
+          <option value="98">Morocel’</option>
+          <option value="99">Oropol’</option>
+          <option value="100"> Potrerillos</option>
+          <option value="101">San Antonio de Flores</option>
+          <option value="102">San Lucas</option>
+          <option value="103">San Mat’as</option>
+          <option value="104">Soledad</option>
+          <option value="105">Teupasenti</option>
+          <option value="106">Texiguat</option>
+          <option value="107">Vado Ancho</option>
+          <option value="108">Yauyupe</option>
+          <option value="109">Trojes</option>
+          <option value="110">Distrito Central capital de Honduras</option>
+          <option value="111">AlubarŽn</option>
+          <option value="112">Cedros</option>
+          <option value="113">CurarŽn</option>
+          <option value="114">El Porvenir</option>
+          <option value="115">Guaimaca</option>
+          <option value="116">La Libertad</option>
+          <option value="117">La Venta</option>
+          <option value="118">Lepaterique</option>
+          <option value="119">Maraita</option>
+          <option value="120">Marale</option>
+          <option value="121">Nueva Armenia</option>
+          <option value="122">Ojojona</option>
+          <option value="123">Orica</option>
+          <option value="124">Reitoca</option>
+          <option value="125">Sabanagrande</option>
+          <option value="126">San Antonio de Oriente</option>
+          <option value="127">San Buenaventura</option>
+          <option value="128">San Ignacio</option>
+          <option value="129">San Juan de Flores</option>
+          <option value="130">San Miguelito</option>
+          <option value="131">Santa Ana</option>
+          <option value="132">Santa Luc’a</option>
+          <option value="133">Talanga</option>
+          <option value="134">Tatumbla</option>
+          <option value="135">Valle de çngeles</option>
+          <option value="136">Villa de San Francisco</option>
+          <option value="137">Vallecillo</option>
+          <option value="138">Puerto Lempira</option>
+          <option value="139">Brus Laguna</option>
+          <option value="140">Ahuas</option>
+          <option value="141">Juan Francisco Bulnes</option>
+          <option value="142">Ram—n Villeda Morales</option>
+          <option value="143">Wampusirpe</option>
+          <option value="144">La Esperanza</option>
+          <option value="145">Camasca</option>
+          <option value="146">Colomoncagua</option>
+          <option value="147">Concepci—n</option>
+          <option value="148">Dolores</option>
+          <option value="149">Intibuc‡</option>
+          <option value="150">Jesœs de Otoro</option>
+          <option value="151">Magdalena</option>
+          <option value="152">Masaguara</option>
+          <option value="153">San Antonio</option>
+          <option value="154">San Isidro</option>
+          <option value="155">San Juan</option>
+          <option value="156">San Marcos de la Sierra</option>
+          <option value="157">San Miguel Guancapla</option>
+          <option value="158">Santa Luc’a</option>
+          <option value="159">Yamaranguila</option>
+          <option value="160">San Francisco de Opalaca</option>
+          <option value="161">Roat‡n</option>
+          <option value="162">Guanaja</option>
+          <option value="163">JosŽ Santos Guardiola</option>
+          <option value="164">Utila</option>
+          <option value="165">La Paz</option>
+          <option value="166">Aguanqueterique</option>
+          <option value="167">Cabañas</option>
+          <option value="168">Cane</option>
+          <option value="169">Chinacla</option>
+          <option value="170">Guajiquiro</option>
+          <option value="171">Lauterique</option>
+          <option value="172">Marcala</option>
+          <option value="173">Mercedes de Oriente</option>
+          <option value="174">Opatoro</option>
+          <option value="175">San Antonio del Norte</option>
+          <option value="176">San JosŽ</option>
+          <option value="177">San Juan</option>
+          <option value="178">San Pedro de Tutule</option>
+          <option value="179">Santa Ana</option>
+          <option value="180">Santa Elena</option>
+          <option value="181">Santa Mar’a</option>
+          <option value="182">Santiago de Puringla</option>
+          <option value="183">Yarula</option>
+          <option value="184">Gracias</option>
+          <option value="185">BelŽn</option>
+          <option value="186">Candelaria</option>
+          <option value="187">Cololaca</option>
+          <option value="188">Erandique</option>
+          <option value="189">Gualcince</option>
+          <option value="190">Guarita</option>
+          <option value="191">La Campa</option>
+          <option value="192">La Iguala</option>
+          <option value="193">Las Flores</option>
+          <option value="194">La Uni—n</option>
+          <option value="195">La Virtud</option>
+          <option value="196">Lepaera</option>
+          <option value="197">Mapulaca</option>
+          <option value="198">Piraera</option>
+          <option value="199">San AndrŽs</option>
+          <option value="200">San Francisco</option>
+          <option value="201">San Juan Guarita</option>
+          <option value="202">San Manuel Colohete</option>
+          <option value="203">San Rafael</option>
+          <option value="204">San Sebasti‡n</option>
+          <option value="205">Santa Cruz</option>
+          <option value="206">Talgua</option>
+          <option value="207">Tambla</option>
+          <option value="208">Tomal‡</option>
+          <option value="209">Valladolid</option>
+          <option value="210">Virginia</option>
+          <option value="211">San Marcos de Caiqu’n</option>
+          <option value="212">Ocotepeque</option>
+          <option value="213">Belen Gualcho</option>
+          <option value="214">Concepci—n</option>
+          <option value="215">Dolores Merend—n</option>
+          <option value="216">Fraternidad</option>
+          <option value="217"> La Encarnaci—n</option>
+          <option value="218">La Labor</option>
+          <option value="219">Lucerna</option>
+          <option value="220">Mercedes</option>
+          <option value="221">San Fernando</option>
+          <option value="222">San Francisco del Valle</option>
+          <option value="223">San Jorge</option>
+          <option value="224">San Marcos</option>
+          <option value="225">Santa Fe</option>
+          <option value="226">Sensenti</option>
+          <option value="227">Sinuapa</option>
+          <option value="228">Juticalpa</option>
+          <option value="229">Campamento</option>
+          <option value="230">Catacamas</option>
+          <option value="231">Concordia</option>
+          <option value="232">Dulce Nombre de Culm’</option>
+          <option value="233">El Rosario</option>
+          <option value="234">Esquipulas del Norte</option>
+          <option value="235">Gualaco</option>
+          <option value="236">Guarizama</option>
+          <option value="237">Guata</option>
+          <option value="238">Guayape</option>
+          <option value="239">Jano</option>
+          <option value="240">La Uni—n</option>
+          <option value="241">Mangulile</option>
+          <option value="242">Manto</option>
+          <option value="243">Salam‡</option>
+          <option value="244">San Esteban</option>
+          <option value="245">San Francisco de Becerra</option>
+          <option value="246">San Francisco de la Paz</option>
+          <option value="247">Santa Mar’a del Real</option>
+          <option value="248">Silca</option>
+          <option value="249">Yoc—n</option>
+          <option value="250">Patuca</option>
+          <option value="251">Santa B‡rbara</option>
+          <option value="252">Arada</option>
+          <option value="253">Atima</option>
+          <option value="254">Azacualpa</option>
+          <option value="255">Ceguaca</option>
+          <option value="256">Concepci—n del Norte</option>
+          <option value="257">Concepci—n del Sur</option>
+          <option value="258">Chinda</option>
+          <option value="259">El N’spero</option>
+          <option value="260">Gualala</option>
+          <option value="261">Ilama</option>
+          <option value="262">Las Vegas</option>
+          <option value="263">Macuelizo</option>
+          <option value="264">Naranjito</option>
+          <option value="265">Nuevo Celilac</option>
+          <option value="266">Nueva Frontera</option>
+          <option value="267">Petoa</option>
+          <option value="268">Protecci—n</option>
+          <option value="269">Quimist‡n</option>
+          <option value="270">San Francisco de Ojuera</option>
+          <option value="271">San JosŽ de las Colinas</option>
+          <option value="272">San Luis</option>
+          <option value="273">San Marcos</option>
+          <option value="274">San Nicol‡s</option>
+          <option value="275">San Pedro Zacapa</option>
+          <option value="276">San Vicente Centenario</option>
+          <option value="277">Santa Rita</option>
+          <option value="278">Trinidad</option>
+          <option value="279">Nacaome</option>
+          <option value="280">Alianza</option>
+          <option value="281">Amapala</option>
+          <option value="282">Aramecina</option>
+          <option value="283">Caridad</option>
+          <option value="284">Goascoran</option>
+          <option value="285">Langue</option>
+          <option value="286">San Fransisco de Coray</option>
+          <option value="287">San Lorenzo</option>
+          <option value="288">Yoro</option>
+          <option value="289">Arenal</option>
+          <option value="290">El Negrito</option>
+          <option value="291">El Progreso</option>
+          <option value="292">Joc—n</option>
+          <option value="293">Moraz‡n</option>
+          <option value="294">Olanchito</option>
+          <option value="295">Santa Rita</option>
+          <option value="296">Sulaco</option>
+          <option value="297">Victoria</option>
+          <option value="298">Yorito</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option Value="*">Departamento</option>
+          <option Value="1">Atlantida</option>
+          <option Value="2">Colon</option>
+          <option Value="3">Comayagua</option>
+          <option Value="4">Copan</option>
+          <option Value="5">Cortes</option>
+          <option Value="6">Choluteca</option>
+          <option Value="7">El paraiso</option>
+          <option Value="6">Francisco Morazan</option>
+          <option Value="9">Gracias a dios</option>
+          <option Value="10">Intibuca</option>
+          <option Value="11">islas de la habia</option>
+          <option Value="12">La paz</option>
+          <option Value="13">Lempira</option>
+          <option Value="14">Ocotepeque</option>
+          <option Value="15">Olancho</option>
+          <option Value="16">Santa Barbara</option>
+          <option Value="17">Valle</option>
+          <option Value="18">Yoro</option>
+        </select>
+       </td>
+      </tr>
+      <tr>
+        <td>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Launch demo modal
+          </button> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--nodal-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Planificacion </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Resultado
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--tabla-->
+<div style="overflow-x: auto" id="clientes">
+  <table class="table-hover tabla">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Encargado</th>
+        <th>Año</th>
+        <th>Municipio</th>        
+        <th>Departamento</th>
+
+        <th>Accion</th>
+        <!--<th scope="col">Total urbana</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td>
+        <a href="#" class="btn btn-success" style="width:90px; margin: 1px;">Editar</a>
+        <a href="#" type="button" class="btn btn-danger" style="width:90px ;">Eliminar</a>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

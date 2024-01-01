@@ -1,0 +1,118 @@
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* VARIABLES */
+
+:root {
+    --blanco: #E0E0E0;
+    --verde-claro: #0a612b;
+    --verde-oscuro: #034218;
+    --bg-body: #C7E1FF;
+}
+
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d3d3d3;
+}
+body{
+	background-color: #272727fa;
+	font-family: Arial;
+}
+#clientes{
+    text-align: center;
+}
+.image{
+    width: 20px;
+    transition: width .3s ease;
+}
+table{
+    margin: 5px 5px;
+    width: 100%;
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+th{
+	padding: 15px;
+}
+
+thead{
+	background-color: #000000;
+	border-bottom: solid 2px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #9494949c;
+	color: white;
+}
+/*  barra de titulo */
+.barraTitulo{
+    width: 100px;
+    background-color: #000000;
+}
+/* fondo de paginas */
+.fondo{
+    width: auto;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.082); 
+
+    display: flex;
+}
+/* graficas de inicio */
+.graficasIndividuales{
+    flex: 1;
+    width: 45%;
+    height: 500px;  
+}
+.graficasIndividuales{
+    margin: 3px;
+    padding: 2px;
+}
+.graficasIndividuales{
+    background-color:rgb(255, 255, 255);
+    border-radius: 3px;
+}
+/* titulo */
+.titulo{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+/* barra del menu */
+.menu{
+    height: auto;
+}
+/* tabala de filtros */
+h2{
+    color: white;
+    background: #000000;
+    border-radius: 5px 5px 0 0;
+}
+.busqueda{
+    padding: 50px;
+}
+@media screen and (max-width:985px ) {
+    .fondo{
+        width: auto;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.082); 
+        display: inline-block;
+    }
+    .graficasIndividuales{
+        width: 100%;
+        height: auto;  
+    }
+}

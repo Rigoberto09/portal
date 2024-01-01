@@ -1,0 +1,102 @@
+{% extends './base.html' %}
+
+{% block title %}C3I{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<form class="form-signin" action="/login" method="POST">
+    <img class="mb-4" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="" width="110" height="120">
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+    <br />
+    {% for message in messages %}
+    <div class="alert alert-primary alert-dismissible" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% endwith %}
+    <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="form-floating">
+        <input type="gmail" class="form-control" id="username" name="username" placeholder="Username">
+        <label for="username">Correo electrónico</label>
+    </div>
+    <div class="form-floating mt-2">
+        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+        <label for="password">Contraseña</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesion</button>
+    <br><br>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    No tienes cuenta aun?
+  </button>
+ 
+</form>
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-signin" action="/registro" method="POST">
+          <img class="mb-4" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="" width="110" height="120">
+          {% with messages = get_flashed_messages() %}
+      
+          {% if messages %}
+          <br />
+          {% for message in messages %}
+          <div class="alert alert-primary alert-dismissible" role="alert">
+              <strong>{{ message }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+          {% endif %}
+      
+          {% endwith %}
+          <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <!-- <div class="form-floating">
+            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="fullname">
+            <label for="username">Nombre Completo</label>
+        </div> -->
+          <div class="form-floating">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+              <label for="username">Correo electrónico</label>
+          </div>
+          <!--
+          <div class="form-floating mt-2">
+              <input type="password" class="form-control" name="password" placeholder="Contraseña">
+              <label for="password">Contraseña</label>
+          </div>
+        -->
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Registrar</button>
+          <br><br>
+      
+          <!-- Button trigger modal -->
+       
+      </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
