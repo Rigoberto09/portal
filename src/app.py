@@ -71,9 +71,11 @@ def login():
                 print(generate_password_hash('123'))
                 
                 return render_template('auth/login.html')
+                
         else:
             flash("Correo no encontrado...")
-            return render_template('auth/login.html')
+            return redirect(url_for('home'))
+            #return render_template('auth/login.html')
     else:
         
         return render_template('auth/login.html')
@@ -180,7 +182,7 @@ def ActualizarDatos():
     return render_template("inicio.html")
 
 @app.route('/inicio')
-@login_required
+#@login_required #requerido iniciar seccion
 def inicio():
     return render_template("inicio.html")
 
@@ -199,7 +201,7 @@ def Datos():
 
 
 @app.route('/Areas')
-@login_required
+#@login_required #requerido iniciar seccion
 def Areas():
     cur = db.connect.cursor()
     cur.execute(""" 
@@ -212,12 +214,12 @@ def Areas():
     return render_template("Areas.html",areas=data)
 
 @app.route('/Asentamientos', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Asentamientos():
     return render_template("Asentamientos.html")
 
 @app.route('/Agricultura', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Agricultura():
     cur = db.connect.cursor()
     cur.execute("""
@@ -231,17 +233,17 @@ def Agricultura():
     return render_template("Agricultura.html", agricula=data)
 
 @app.route('/Censo', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Censo():
     return render_template("Censo.html")
 
 @app.route('/Desempleo', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Desempleo():
     return render_template("Desempleo.html")
 
 @app.route('/centros', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def centros():
     cur = db.connect.cursor()
     cur.execute("""
@@ -253,18 +255,18 @@ def centros():
     return render_template("centros.html",centros=data)
 
 @app.route('/Dispensa', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Dispensa():
     return render_template("Dispensa.html")
 
 @app.route('/palmares', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def palmares():
     return render_template("palmares.html")
 
 
 @app.route('/Maestro', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Maestro():
     cur = db.connect.cursor()
     cur.execute("""
@@ -276,7 +278,7 @@ def Maestro():
     return render_template("Maestro.html",profes=data)
 
 @app.route('/Microcuencas', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Microcuencas():
     cur = db.connect.cursor()
     cur.execute("""
@@ -288,62 +290,62 @@ def Microcuencas():
     return render_template("Microcuencas.html",micro= data)
 
 @app.route('/Planificacion', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Planificacion():
     return render_template("Planificacion.html")
 
 @app.route('/plantaciones', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def plantaciones():
     return render_template("plantaciones.html")
 
 @app.route('/Regiones', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Regiones():
     return render_template("Regiones.html")
 
 @app.route('/Retornados', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Retornados():
     return render_template("Retornados.html")
 
 @app.route('/hospitalizados', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def hospitalizados():
     return render_template("hospitalizados.html")
 
 @app.route('/salarios', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Salarios():
     return render_template("salarios.html")
 
 @app.route('/enfermedades', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def enfermedades():
     return render_template("enfermedades.html")
 
 @app.route('/vacunados', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def vacunados():
     return render_template("vacunados.html")
 
 @app.route('/seresvivos', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def seresvivos():
     return render_template("seresvivos.html")
 
 @app.route('/Torneos', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Torneos():
     return render_template("Torneos.html")
 
 @app.route('/equipos', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def Equipos():
     return render_template("Equipos.html")
 
 @app.route('/users', strict_slashes=False)
-@login_required
+#@login_required #requerido iniciar seccion
 def users():
     cur = db.connect.cursor()
     cur.execute('SELECT * FROM user')
@@ -357,7 +359,7 @@ def users():
 
 #----Eliminar usuarios-----------------
 @app.route('/eliminar_usuarios/<string:id>')
-@login_required
+#@login_required #requerido iniciar seccion
 def eliminar_usuarios(id):
     cur = db.connection.cursor()
     cur.execute('DELETE FROM user WHERE id = {0}'.format(id))
@@ -368,7 +370,7 @@ def eliminar_usuarios(id):
 #-------Editar usuarios--------------
 #-------Agregar usuario--------------
 @app.route('/agregarN', methods=['GET', 'POST'])
-@login_required
+#@login_required #requerido iniciar seccion
 def agregarN():
     if request.method == 'POST':
         user = UserN(0, request.form['username'])
