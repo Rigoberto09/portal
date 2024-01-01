@@ -1,2 +1,2 @@
 
-password_gmail = 'esfzvplavpyshisj'
+password_gmail = 'ComtrasenaGenerada'
